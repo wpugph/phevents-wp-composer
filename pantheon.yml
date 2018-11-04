@@ -1,0 +1,15 @@
+api_version: 1
+php_version: 7.2
+web_docroot: true
+filemount: /wp-content/uploads
+workflows:
+  deploy_product:
+    after:
+      -
+        type: webphp
+        description: 'Run composer prepare-for-pantheon'
+        script: private/scripts/deploy_product/prepare-for-pantheon.php
+      -
+        type: webphp
+        description: 'Run composer install'
+        script: private/scripts/deploy_product/composer-install.php
