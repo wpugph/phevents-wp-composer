@@ -56,6 +56,8 @@ Tests can also be run locally on Lando with the commands below:
 ### Updates and file changes
 ** Note: ** if you are using Lando for local development prefix all of the commands below with `lando ` to run them on Lando instead of your local system. For example, `npm run dev` would become `lando npm run dev`.
 
+
+
 * `composer update` will need to be ran after any changes to `composer.json`
     - Any non-custom PHP code, including to WordPress core, new plugins, etc., should be managed with Composer and updated in this way and avoid touching anything in the DEV environment.
 * `npm run gulp` will need to be ran in `web/wp-content/themes/twentyseventeen-child` after any changes to `web/wp-content/themes/twentyseventeen-child/source` files
