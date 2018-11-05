@@ -7,6 +7,7 @@ set -ex
 # php composer-setup.php #ok
 # php -r "unlink('composer-setup.php');" #ok
 ROOTPWD=$(pwd)
+echo ROOTPWD
 touch /root/.ssh/idrsa
 echo "$STAGING_PRIVATE_KEY" > /root/.ssh/idrsa
 chmod 400 /root/.ssh/idrsa
