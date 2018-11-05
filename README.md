@@ -63,3 +63,5 @@ Tests can also be run locally on Lando with the commands below:
     - `npm run dev` is the same as above but it also starts a [BrowserSync](https://browsersync.io/) instance for automated reloading. Be sure to update the `url` export in `web/wp-content/themes/twentyseventeen-child/gulp/constants.js` with your local development URL. Unless you are using Lando, in which case leave it set to `https://nginx/`.
 * `npm install` will need to be ran after any changes to `web/wp-content/themes/twentyseventeen-child/package.json`
     - This is for advanced users who wish to customize their frontend build process.
+
+
