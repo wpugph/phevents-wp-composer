@@ -41,5 +41,5 @@ test:
     expire_in: 1 week
   environment:
     name: production
-  only:
-  - master
+  #only:
+  #- master
