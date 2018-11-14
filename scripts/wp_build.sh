@@ -3,7 +3,7 @@
 set -ex
 
 export BUILDMSG="GitLab WP build:$CI_COMMIT_MESSAGE"
-export ENV=dev
+export ENV=composer
 
 terminus auth:login --machine-token=$MACHINETOKEN --email=$EMAIL
 terminus connection:set $PANTHEONSITENAME.dev sftp

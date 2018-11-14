@@ -12,8 +12,9 @@ cd $ROOTPWD
 # apt-get install -y nodejs #ok
 
 echo "This is where wp theme assets are built and deployed"
+echo $CI_COMMIT_REF_NAME
 export THEMEBUILDMSG="GitLab WP theme build:$CI_COMMIT_MESSAGE"
-export ENV=dev
+export ENV=composer
 export WPTHEME=web/wp-content/themes/twentyseventeen-child
 #export WPTHEME=web/wp-content/themes/bootstrapfast-child
 export THEMEDEPLOYMSG="GitLab Theme deploy:$CI_COMMIT_MESSAGE"
@@ -32,10 +33,6 @@ cd $ROOTPWD
 terminus auth:login --machine-token=$MACHINETOKEN --email=$EMAIL
 terminus connection:set $PANTHEONSITENAME.dev sftp
 
-# sync bootstrapfast child theme
-#rsync -rLvz --size-only --ipv4 --progress -e 'ssh -p 2222' ./$WPTHEME/. --temp-dir=~/tmp/ $ENV.$SITE@appserver.$ENV.$SITE.drush.in:code/$WPTHEME/ --exclude='*.git*' --exclude node_modules/ --exclude gulp/ --exclude src/
-
-# sync twentyseventeen child theme
 rsync -rLvz --size-only --ipv4 --progress -e 'ssh -p 2222' ./$WPTHEME/. --temp-dir=~/tmp/ $ENV.$SITE@appserver.$ENV.$SITE.drush.in:code/$WPTHEME/ --exclude='*.git*' --exclude node_modules/ --exclude gulp/ --exclude source/
 
 #make sure the modified gitignore is added in Pantheon
