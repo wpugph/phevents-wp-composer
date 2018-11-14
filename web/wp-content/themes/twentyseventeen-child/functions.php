@@ -1,4 +1,5 @@
 <?php
+// phpcs:ignoreFile
 /**
  * TwentySeventeen Child Theme Functions
  * Version: 0.0.1
